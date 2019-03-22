@@ -8,8 +8,8 @@ difficult elements as time permits.
 Every student should be able to print the string and the
 length of the string.  If you don't remember how, LOOK at
 your programming sessions!!!   
-PUT YOUR NAME HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+George Bulger.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -59,11 +59,76 @@ def test_problem2():
     print('Test case 1 Actual: ')
     problem3(string_of_characters)
     print('*********************************************')
-    # TODO: 2. Write at least three reasonable test cases below.
+
+    print('Test case 2')
+    print('------------------------------------')
+    string2 = 'hello123'
+    print('Expected')
+    print('String entered: ', string2)
+    print('Length of string: ', 8)
+    print('Number of alphabetic characters: ', 5)
+    print('Number of digits: ', 3)
+    print('Reversed string is: 321olleh')
+    print('The user entered a normal string')
+    print()
+    print('------------------------------------')
+    print('Test case 2 Actual: ')
+    problem3(string2)
+
+    print()
+    print('Test case 3')
+    print('Expected')
+    print('------------------------------------')
+    string3 = '0123olo3210'
+    print('String entered: ', string3)
+    print('Length of string: ', 11)
+    print('Number of alphabetic characters: ', 3)
+    print('Number of digits: ', 8)
+    print('Reversed string is: 0123olo3210')
+    print('The user entered a palindrome')
+    print()
+    print('------------------------------------')
+    print('Test case 3 Actual: ')
+    problem3(string3)
+
+    print()
+    print('Test case 4')
+    print('------------------------------------')
+    string4 = '0'
+    print('Expected')
+    print('String entered: ', string4)
+    print('Length of string: ', 1)
+    print('Number of alphabetic characters: ', 0)
+    print('Number of digits: ', 1)
+    print('Reversed string is: 0')
+    print('The user entered a palindrome')
+    print()
+    print('------------------------------------')
+    print('Test case 4 Actual: ')
+    problem3(string4)
+
+    # DONE: 2. Write at least three reasonable test cases below.
     #         Three excellent test cases are worth 10 points
 
 
 def problem3(string_of_characters):
+    letters = 0
+    numbers = 0
+    print('String entered:', string_of_characters)
+    print('Length of string', len(string_of_characters))
+    for k in range(len(string_of_characters)):
+        if string_of_characters[k].isalpha() == True:
+            letters = letters + 1
+        if string_of_characters[k].isdigit() == True:
+            numbers = numbers + 1
+    print('Number of alphabetic characters:', letters)
+    print('Number of digits:', numbers)
+    print('Reversed string is: ', reverseString(string_of_characters))
+    if reverseString(string_of_characters) == string_of_characters:
+        print('The user entered a palindrome')
+    else:
+        print('The user entered a normal string')
+
     """
     What comes in:
           -- a string of characters that contains letters of the alphabet and/or numbers
@@ -121,7 +186,7 @@ def problem3(string_of_characters):
        Reversed string: b21a
        The user entered a normal string
     """
-    # TODO: 3. Implement this function.
+    # DONE: 3. Implement this function.
     # To implement this function, you need to reverse a string.
     # If you write your own method to reverse a string and solve
     # the entire problem, you will get 25 points. If you use the
