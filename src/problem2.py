@@ -192,6 +192,7 @@ def problem3(string_of_characters):
     # the entire problem, you will get 25 points. If you use the
     # provided method reverseString(string),you will get 20 points
 
+
 # -----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
 # imported by another module), then call the 'main' function.
