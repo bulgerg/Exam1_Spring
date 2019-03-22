@@ -250,15 +250,25 @@ def run_test_get_passengers():
     print("Actual passengers returns:", e1.get_passengers(2))
     print("Actual:", e1.capacity, e1.num_floors, e1.passengers)
 
-    # Test 2:  Adds 2 passengers to an empty elevator.
-    e1 = Elevator(20, 18)
+    # Test 2:  Fails to add 100 passengers to an empty elevator.
+    e2 = Elevator(20, 18)
     expected_capacity = 20
     expected_num_floors = 18
-    expected_num_passengers = 2
-    print('Expected passengers returns ', True)
+    expected_num_passengers = 0
+    print('Expected passengers returns ', False)
     print("Expected:", expected_capacity, expected_num_floors, expected_num_passengers)
-    print("Actual passengers returns:", e1.get_passengers(2))
-    print("Actual:", e1.capacity, e1.num_floors, e1.passengers)
+    print("Actual passengers returns:", e2.get_passengers(100))
+    print("Actual:", e2.capacity, e2.num_floors, e2.passengers)
+
+    # Test 3:  Fails to add 21 passengers to an empty elevator.
+    e3 = Elevator(20, 18)
+    expected_capacity = 20
+    expected_num_floors = 18
+    expected_num_passengers = 0
+    print('Expected passengers returns ', False)
+    print("Expected:", expected_capacity, expected_num_floors, expected_num_passengers)
+    print("Actual passengers returns:", e3.get_passengers(21))
+    print("Actual:", e3.capacity, e3.num_floors, e3.passengers)
     ################################################################
     #
     #     Add your values for actual above here
@@ -277,6 +287,19 @@ def run_test_exit_passengers():
     print("Expected final passengers:", expected_fpassenger)
     print("Actual initial passengers:", e1.passengers)
     e1.exit_passengers(2)
+    print("Actual final passengers:", e1.passengers)
+
+    # Test 2: 5 passengers leave the elevator with 5 passengers
+    e1 = Elevator(20, 10)
+    e1.get_passengers(5)
+    expected_ipassenger = 5
+    expected_fpassenger = 0
+    print("Testing the exit_passengers method of the Elevator class.")
+    print("---------------------------------------------------------")
+    print("Expected initial passengers:", expected_ipassenger)
+    print("Expected final passengers:", expected_fpassenger)
+    print("Actual initial passengers:", e1.passengers)
+    e1.exit_passengers(5)
     print("Actual final passengers:", e1.passengers)
 
 def print_failure_message():
