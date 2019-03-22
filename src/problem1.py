@@ -155,7 +155,7 @@ class Elevator(object):
 
 
 # ---------------------------------------------------------------------
-#     TODO: 7. Write methods, AS NEEDED, to allow passengers to exit
+#     DONE: 7. Write methods, AS NEEDED, to allow passengers to exit
 #      the elevator.  Show that your solution works with a test case. (2 pts)
 #     Write the testing code (below) before writing this function.
 # ---------------------------------------------------------------------
@@ -207,6 +207,17 @@ def run_test_go_to_floor():
     print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
     print("Actual: go_to_floor returns:", e1.go_to_floor(4))
     print("Actual:", e1.capacity, e1.num_floors, e1.current_floor)
+
+    # Test 2: Fails to send the elevator
+    e2 = Elevator(20, 18)
+    expected_capacity = 20
+    expected_num_floors = 18
+    expected_go_to_floor = 0
+    print('Expected: go_to_floor returns :', False)
+    print("Expected:", expected_capacity, expected_num_floors, expected_go_to_floor)
+    print("Actual: go_to_floor returns:", e2.go_to_floor(100))
+    print("Actual:", e2.capacity, e2.num_floors, e2.current_floor)
+
     ################################################################
     #
     #     Add your values for actual below here
@@ -239,6 +250,15 @@ def run_test_get_passengers():
     print("Actual passengers returns:", e1.get_passengers(2))
     print("Actual:", e1.capacity, e1.num_floors, e1.passengers)
 
+    # Test 2:  Adds 2 passengers to an empty elevator.
+    e1 = Elevator(20, 18)
+    expected_capacity = 20
+    expected_num_floors = 18
+    expected_num_passengers = 2
+    print('Expected passengers returns ', True)
+    print("Expected:", expected_capacity, expected_num_floors, expected_num_passengers)
+    print("Actual passengers returns:", e1.get_passengers(2))
+    print("Actual:", e1.capacity, e1.num_floors, e1.passengers)
     ################################################################
     #
     #     Add your values for actual above here
